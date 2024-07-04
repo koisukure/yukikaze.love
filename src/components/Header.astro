@@ -1,0 +1,56 @@
+---
+// import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "@/consts";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header>
+    <div class="site-title">
+        <a href="/tl/">{SITE_TITLE}</a>
+    </div>
+    <nav class="internal-links">
+        <!-- <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/tl">Translations</HeaderLink> -->
+    </nav>
+    <div class="theme-toggle">
+        <ThemeToggle />
+    </div>
+</header>
+
+<style lang="scss">
+    header {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr 1fr;
+        position: fixed;
+        isolation: isolate;
+        top: 0;
+        width: 100%;
+        height: var(--header-height);
+        gap: 1em;
+        align-items: center;
+        margin: 0;
+        padding: 0 0.9rem;
+        background-color: rgb(var(--header-background));
+        box-shadow: 0 2px 8px rgba(#000, 5%);
+        z-index: 99;
+        font-size: 1.2em;
+    }
+
+    div,
+    nav {
+        display: flex;
+        align-content: center;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .site-title {
+        font-weight: 700;
+    }
+
+    .theme-toggle {
+        justify-self: flex-end;
+    }
+</style>

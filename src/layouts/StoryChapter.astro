@@ -1,0 +1,40 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+
+import Navigation from "@/components/tl/chapter/Navigation.astro";
+import StoryOptions from "@/components/tl/chapter/StoryOptions";
+
+import "@/styles/variables/tl.scss";
+import "@/styles/tl/chapter.scss";
+
+type Props = CollectionEntry<"tl">["data"];
+
+const { title, description, series, story, previous, next } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+
+    <body>
+        <Header />
+        <main>
+            <section>
+                <article>
+                    <slot />
+                </article>
+            </section>
+        </main>
+        <div class="controls__wrapper">
+            {
+                story || previous || next ? (
+                    <Navigation story={story} previous={previous} next={next} />
+                ) : null
+            }
+            {series === "18trip" ? <StoryOptions client:only="react" /> : null}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+@use "normalize.scss";
+@use "variables/main.scss";
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(var(--background-primary));
+    color: rgb(var(--text-primary));
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+svg {
+    font-size: inherit;
+    vertical-align: middle;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+a {
+    color: rgb(var(--accent-color));
+
+    &:hover {
+        color: rgb(var(--accent-color));
+    }
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+pre {
+    padding: 1.5em;
+    border-radius: 8px;
+}
+
+pre > code {
+    all: unset;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgb(var(--gray-light));
+}
+
+html.dark {
+    img {
+        filter: var(--img-filter);
+
+        &:hover {
+            filter: unset;
+        }
+    }
+}
+
+// mobile
+@media only screen and (max-width: 812px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+.sr-only {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px 1px 1px 1px);
+    /* maybe deprecated but we need to support legacy browsers */
+    clip: rect(1px, 1px, 1px, 1px);
+    /* modern browsers, clip-path works inwards from each corner */
+    clip-path: inset(50%);
+    /* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
+    white-space: nowrap;
+}
