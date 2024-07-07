@@ -26,12 +26,15 @@
         "astro-auto-import": "^0.4.2",
         "astro-icon": "^1.1.0",
         "nanostores": "^0.10.3",
-        "normalize-scss": "^8.0.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "sass": "^1.77.4",
         "sharp": "^0.33.4",
         "typescript": "^5.4.5"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.19",
+        "cssnano": "^7.0.4",
+        "sass": "^1.77.6"
     },
     "postinstall": "npx patch-package && echo \"Patched\""
 }

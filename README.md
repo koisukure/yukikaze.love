@@ -17,3 +17,11 @@
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## To-do
+
+-   [ ] Finish story index page
+-   [ ] Footnotes/tooltips (translation notes)
+-   [ ] Collapsible options
+-   [ ] Reader options (i.g. font size)
+-   [ ] Incorporate more color schemes

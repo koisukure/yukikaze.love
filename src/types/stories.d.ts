@@ -21,3 +21,13 @@ interface Section {
     title?: string;
     chapters: Chapters[];
 }
+
+interface Translators {
+    name: string;
+    href: string;
+}
+
+interface Proofreaders {
+    name: string;
+    href: string;
+}

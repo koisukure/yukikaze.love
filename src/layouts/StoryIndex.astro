@@ -5,6 +5,7 @@ import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 
 import ChapterNav from "@/components/tl/index/ChapterNav.astro";
+import InfoGrid from "@/components/tl/index/InfoGrid.astro";
 
 import "@/styles/variables/tl.scss";
 import "@/styles/tl/index.scss";
@@ -19,6 +20,8 @@ interface Props {
     bannerPosition: string;
     slug: string;
     storyTheme: string;
+    translators: Translators[];
+    proofreaders: Proofreaders[];
 }
 
 const {
@@ -31,19 +34,14 @@ const {
     banner,
     bannerPosition,
     storyTheme,
+    translators,
+    proofreaders,
 } = Astro.props;
 ---
 
 <html lang="en">
     <head>
         <BaseHead title={title} description={description} />
-        <!-- <style
-            lang="scss"
-            define:vars={{
-                storyBanner: `url(${banner.src})`,
-                bannerPosition: `${bannerPosition}`,
-            }}
-        ></style> -->
     </head>
 
     <body>
@@ -56,7 +54,7 @@ const {
         <div class="main__wrapper" data-story-theme={storyTheme}>
             <main>
                 <article>
-                    <section class="">
+                    <section>
                         <div class="title__wrapper">
                             <h1 class="en">{title}</h1>
                             {titleOG && <h2 class="og">{titleOG}</h2>}
@@ -67,6 +65,13 @@ const {
                         <slot>
                             {description}
                         </slot>
+                    </section>
+                    <section class="info__wrapper">
+                        <InfoGrid
+                            translators={translators}
+                            proofreaders={proofreaders}
+                            chapterTotal={chapterTotal}
+                        />
                     </section>
                 </article>
                 <ChapterNav chapterSections={chapterSections} slug={slug} />
