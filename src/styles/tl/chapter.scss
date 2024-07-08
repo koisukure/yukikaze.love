@@ -25,6 +25,35 @@ img {
     }
 }
 
+ol {
+    padding-left: 0;
+    margin: 0 0 0 20px;
+
+    p {
+        margin: 0 0 0.35em 0;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+sup {
+    display: inline-flex;
+    vertical-align: middle;
+
+    a {
+        color: rgb(var(--text-primary));
+        line-height: 1;
+        font-size: 0.5rem;
+        font-weight: 700;
+        border-radius: 3px;
+        border: solid 1px rgba(var(--text-primary), 0.3);
+        padding: 2px 4px;
+        background: rgba(var(--text-primary), 0.3);
+    }
+}
+
 .t {
     color: var(--bubble-text-thought) !important;
 }
