@@ -11,7 +11,17 @@ const { slug, chapters } = Astro.props;
     chapters.map((chapter) => {
         return (
             <li class="part">
-                <a href={`/tl/${slug}/${chapter.href}`}>{chapter.label}</a>
+                {chapter.none === true ? (
+                    <>
+                        <a class="none">{chapter.label}</a>
+                    </>
+                ) : (
+                    <>
+                        <a href={`/tl/${slug}/${chapter.href}`}>
+                            {chapter.label}
+                        </a>
+                    </>
+                )}
             </li>
         );
     })

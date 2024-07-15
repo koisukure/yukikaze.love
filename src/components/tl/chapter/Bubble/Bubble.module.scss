@@ -139,6 +139,15 @@
     }
 }
 
+.glow .icon__box {
+    box-shadow: 0px 0px 6px var(--glow-color);
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.shake .icon__box {
+    animation: shake 1s ease-in-out infinite;
+}
+
 @keyframes scan {
     0% {
         background-position: 0 100%, 0 100%;
@@ -146,14 +155,6 @@
     100% {
         background-position: 0 0, 0 0;
     }
-}
-
-.shake .icon__box {
-    animation-name: shake;
-    animation-duration: 1s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-play-state: running;
 }
 
 @keyframes shake {
@@ -355,6 +356,16 @@
     0%,
     100% {
         transform: translate(0, 0) rotate(0);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        box-shadow: 0px 0px 6px var(--glow-color);
+    }
+    50% {
+        box-shadow: 0px 0px 12px var(--glow-color);
     }
 }
 

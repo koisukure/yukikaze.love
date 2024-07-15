@@ -83,15 +83,15 @@ select {
     }
 
     &.green {
-        background-color: rgba(var(--storyoptions-green), 0.2);
-        color: rgb(var(--storyoptions-green));
+        background-color: rgba(var(--green), 0.2);
+        color: rgb(var(--green));
 
         &:hover {
-            background-color: rgba(var(--storyoptions-green), 0.3);
+            background-color: rgba(var(--green), 0.3);
         }
 
         &:focus {
-            box-shadow: 0 0 0 2px rgb(var(--storyoptions-green));
+            box-shadow: 0 0 0 2px rgb(var(--green));
         }
     }
 }

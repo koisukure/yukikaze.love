@@ -124,7 +124,7 @@
         "color": "#c5d8c1"
     },
     {
-        "name": "Jun",
+        "name": "Sojun",
         "color": "#c5d8c1"
     },
     {
@@ -138,5 +138,9 @@
     {
         "name": "Yunyun",
         "color": "#c5d8c1"
+    },
+    {
+        "name": "Shumai",
+        "color": "#65c267"
     }
 ]

@@ -17,14 +17,15 @@ const { to } = Astro.props;
     .phone {
         max-width: 350px;
         margin: 0 auto;
-        background-color: #1e66f5;
+        background-color: var(--phone-case-bg);
         padding: 5px;
         border-radius: 30px;
+        filter: var(--img-filter);
 
         .msg {
             display: flex;
             flex-direction: column;
-            background-color: #eff1f5;
+            background-color: var(--phone-screen-bg);
             padding: 15px;
             border-radius: 0 0 25px 25px;
             border-right: 5px solid #000;
@@ -35,8 +36,8 @@ const { to } = Astro.props;
                 font-size: 1.1rem;
                 display: flex;
                 justify-content: center;
-                background-color: #04a5e5;
-                color: #fff;
+                background-color: var(--phone-header-bg);
+                color: var(--phone-header-text);
                 border-radius: 25px 25px 0 0;
                 padding: 15px;
                 border-top: 5px solid #000;
@@ -64,8 +65,8 @@ const { to } = Astro.props;
             align-items: flex-end;
 
             p {
-                background-color: #04a5e5;
-                color: #fff;
+                background-color: var(--phone-sent-bg);
+                color: var(--phone-sent-text);
 
                 &:last-child {
                     border-bottom-right-radius: 3px;
@@ -88,8 +89,8 @@ const { to } = Astro.props;
             }
 
             p {
-                background-color: #ccd0da;
-                color: var(--bubble-text);
+                background-color: var(--phone-received-bg);
+                color: var(--phone-received-text);
 
                 &:last-child {
                     border-bottom-left-radius: 3px;

@@ -14,14 +14,14 @@ interface Props {
     title: string;
     titleOG?: string;
     description: string;
-    chapterTotal: number;
+    chapterTotal?: number;
     chapterSections: Section[];
     banner: ImageMetadata;
     bannerPosition: string;
     slug: string;
     storyTheme: string;
-    translators: Translators[];
-    proofreaders: Proofreaders[];
+    translators?: Translators[];
+    proofreaders?: Proofreaders[];
 }
 
 const {
@@ -63,7 +63,7 @@ const {
                             </div>
                         </div>
                         <slot>
-                            {description}
+                            <p>{description}</p>
                         </slot>
                     </section>
                     <section class="info__wrapper">

@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    speaker?: string;
+    response?: string;
+}
+
+const { speaker, response } = Astro.props;
+---
+
+<details class="choice">
+    <summary class="response" data-character={speaker}>
+        <span>{response}</span>
+        <Icon name="chevron-down" />
+    </summary>
+    <div class="answer">
+        <slot />
+    </div>
+</details>
+
+<style lang="scss">
+    details {
+        margin: 8px 0;
+    }
+
+    details > summary {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+        background-color: var(--bubble-bg, var(--bubble-bg-default));
+        padding: 0.65em;
+        border-radius: 8px;
+        cursor: pointer;
+
+        span {
+            grid-column: 2/3;
+        }
+
+        svg {
+            grid-column: 3/4;
+            font-size: 2.2rem;
+            transition: transform 0.2s ease-in-out;
+        }
+    }
+
+    details[open] > summary svg {
+        transform: rotate(180deg);
+    }
+
+    .answer {
+        border: 1px solid var(--bubble-line-color);
+        margin-top: 8px;
+        padding: 0 1em;
+        border-radius: 8px;
+    }
+</style>

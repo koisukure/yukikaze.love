@@ -20,8 +20,19 @@ html {
     --bubble-line-gap: 0.15rem;
     --bubble-line-color: rgb(var(--blockquote-color));
     --box-radio-bg: rgba(#{toRGB(latte.$yellow)}, 0.15);
+    --phone-case-bg: #{latte.$blue};
+    --phone-screen-bg: #{latte.$base};
+    --phone-header-bg: #{latte.$sky};
+    --phone-header-text: #{latte.$base};
+    --phone-sent-bg: #{latte.$sky};
+    --phone-sent-text: #{latte.$base};
+    --phone-received-bg: #{latte.$surface0};
+    --phone-received-text: #{latte.$text};
+    --paper-bg: #{latte.$surface0};
+    --paper-text: #{latte.$text};
+    --glow-color: #{rgba(latte.$blue, 0.75)};
 
-    --storyoptions-green: #{toRGB(latte.$green)};
+    --green: #{toRGB(latte.$green)};
 
     [data-character] {
         --bubble-bg: hsl(var(--hue), 21%, 83%);
@@ -43,8 +54,9 @@ html {
 html.dark {
     --bubble-bg-default: #{mocha.$surface0};
     --box-radio-bg: rgba(#{toRGB(mocha.$yellow)}, 0.15);
+    --glow-color: #{rgba(#fff, 0.75)};
 
-    --storyoptions-green: #{toRGB(mocha.$green)};
+    --green: #{toRGB(mocha.$green)};
 
     [data-character] {
         --bubble-bg: hsl(var(--hue), 21%, 23%);

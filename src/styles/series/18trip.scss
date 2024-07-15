@@ -13,6 +13,10 @@
     }
 }
 
+[data-character$="Monkey"] {
+    --icon: url("/tl/icons/monkey.webp");
+}
+
 .obj {
     display: flex;
     justify-content: center;
@@ -22,22 +26,37 @@
         height: 175px;
         width: auto;
         margin: 0 !important;
+        border-radius: 0;
     }
 }
 
-.cg {
-    img {
-        aspect-ratio: 19.5 / 9;
-        object-fit: cover;
+.cg img {
+    @extend %fit-image;
 
-        &:hover {
-            aspect-ratio: 64 / 41;
-        }
+    &:hover {
+        aspect-ratio: 64 / 41;
     }
+}
+
+.bg img {
+    @extend %fit-image;
 }
 
 .sepia {
-    filter: sepia(75%);
+    filter: sepia(75%) brightness(80%);
+}
+
+.green {
+    color: rgb(var(--green));
+}
+
+p.big {
+    font-size: 1.35rem !important;
+}
+
+%fit-image {
+    aspect-ratio: 19.5 / 9;
+    object-fit: cover;
 }
 
 @include characters(
@@ -72,8 +91,9 @@
     $Minamo: #c5d8c1,
     $Hakkei: #c5d8c1,
     $Hassaku: #c5d8c1,
-    $Jun: #c5d8c1,
+    $Sojun: #c5d8c1,
     $Yumenosuke: #c5d8c1,
     $Kodama: #c5d8c1,
-    $Yunyun: #c5d8c1
+    $Yunyun: #c5d8c1,
+    $Shumai: #65c267
 );

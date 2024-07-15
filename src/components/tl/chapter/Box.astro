@@ -13,7 +13,7 @@ const { type } = Astro.props;
 <style lang="scss">
     .box {
         &.radio {
-            background: var(--box-radio-bg);
+            background-color: var(--box-radio-bg);
             text-align: center;
             padding: 1em;
             margin: 1em 1.5em;
@@ -34,9 +34,11 @@ const { type } = Astro.props;
         }
 
         &.paper {
-            background: #e6e9ef;
+            background-color: var(--paper-bg);
+            color: var(--paper-text);
             padding: 1.5em;
             margin: 0 2em 1em;
+            filter: var(--img-filter);
         }
     }
 </style>
