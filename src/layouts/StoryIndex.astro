@@ -14,21 +14,21 @@ interface Props {
     title: string;
     titleOG?: string;
     description: string;
-    chapterTotal?: number;
+    // chapterTotal?: number;
     chapterSections: Section[];
     banner: ImageMetadata;
     bannerPosition: string;
     slug: string;
     storyTheme: string;
-    translators?: Translators[];
-    proofreaders?: Proofreaders[];
+    translators: Translators[];
+    proofreaders: Proofreaders[];
 }
 
 const {
     title,
     titleOG,
     description,
-    chapterTotal,
+    // chapterTotal,
     chapterSections,
     slug,
     banner,
@@ -70,7 +70,6 @@ const {
                         <InfoGrid
                             translators={translators}
                             proofreaders={proofreaders}
-                            chapterTotal={chapterTotal}
                         />
                     </section>
                 </article>
