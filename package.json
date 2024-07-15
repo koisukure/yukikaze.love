@@ -7,7 +7,8 @@
         "start": "astro dev",
         "build": "astro check && astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "copy": "cp -r patches public src .gitignore astro.config.mjs postcss.config.cjs tsconfig.json package.json .editorconfig .prettierignore package-lock.json pnpm-lock.yaml README.md /c/Users/Ren/Documents/Code/koisukure/yukikaze.love"
     },
     "dependencies": {
         "@astrojs/check": "^0.7.0",

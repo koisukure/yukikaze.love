@@ -45,6 +45,11 @@ const { speaker, response } = Astro.props;
             font-size: 2.2rem;
             transition: transform 0.2s ease-in-out;
         }
+
+        // safari is a bitch
+        &::-webkit-details-marker {
+            display: none;
+        }
     }
 
     details[open] > summary svg {

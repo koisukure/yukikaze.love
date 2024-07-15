@@ -11,7 +11,8 @@ import "@/styles/tl/chapter.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
-const { title, description, series, story, previous, next } = Astro.props;
+const { title, description, series, story, previous, next, noIndex } =
+    Astro.props;
 ---
 
 <html lang="en">
@@ -31,7 +32,12 @@ const { title, description, series, story, previous, next } = Astro.props;
         <div class="controls__wrapper">
             {
                 story || previous || next ? (
-                    <Navigation story={story} previous={previous} next={next} />
+                    <Navigation
+                        noIndex={noIndex}
+                        story={story}
+                        previous={previous}
+                        next={next}
+                    />
                 ) : null
             }
             {series === "18trip" ? <StoryOptions client:only="react" /> : null}

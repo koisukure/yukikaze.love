@@ -1,6 +1,7 @@
 .narration {
     display: grid;
     margin: 1em 0;
+    line-height: 1.2;
     align-items: center;
     grid-template-columns: auto 1fr;
     transition: grid-template 0.2s ease;
@@ -13,7 +14,7 @@
 
         p {
             font-size: 1rem;
-            margin: 0.5em 0;
+            margin: 0.35em 0;
             transition: transform 0.2s ease;
 
             &:hover {
