@@ -32,7 +32,7 @@ html.dark {
     --accent-color: #{toRGB(mocha.$pink)};
     --header-background: #{toRGB(mocha.$crust)};
     --blockquote-color: #{toRGB(mocha.$surface2)};
-    --img-filter: brightness(75%);
+    --img-filter: brightness(80%);
 
     --drop-shadow-color: #{toRGB(color.adjust(#000, $alpha: -0.5))};
 }
