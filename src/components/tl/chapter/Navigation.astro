@@ -11,7 +11,7 @@ interface Props {
 const { story, previous, next, noIndex } = Astro.props;
 ---
 
-<nav class:list={["story-nav", { noIndex: noIndex }]} class="story-nav">
+<nav class:list={["story-nav", { noIndex: noIndex }]}>
     <div>
         {
             previous ? (

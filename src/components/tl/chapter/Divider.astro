@@ -5,12 +5,13 @@ interface Props {
     loc?: string;
     fb?: "start" | "end";
     timeskip?: boolean;
+    omotenashi?: boolean;
 }
 
-const { loc, fb, timeskip } = Astro.props;
+const { loc, fb, timeskip, omotenashi } = Astro.props;
 ---
 
-<div class="divider">
+<div class:list={["divider", { omotenashi: omotenashi }]}>
     <div>
         {
             loc && (
@@ -35,6 +36,14 @@ const { loc, fb, timeskip } = Astro.props;
                 <>
                     <Icon name="clock" />
                     <strong>Timeskip</strong>
+                </>
+            )
+        }
+        {
+            omotenashi && (
+                <>
+                    <Icon name="swords" />
+                    <strong>Omotenashi Battle</strong>
                 </>
             )
         }
@@ -78,6 +87,15 @@ const { loc, fb, timeskip } = Astro.props;
             width: 100%;
             display: block;
             border-bottom: solid var(--bubble-line-color) 1px;
+        }
+
+        &.omotenashi {
+            color: var(--omotenashi-color);
+
+            &::before,
+            &::after {
+                border-bottom: solid var(--omotenashi-color) 1px;
+            }
         }
     }
 </style>

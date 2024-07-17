@@ -19,6 +19,7 @@ html {
     --bubble-line-size: 1rem;
     --bubble-line-gap: 0.15rem;
     --bubble-line-color: rgb(var(--blockquote-color));
+
     --box-radio-bg: rgba(#{toRGB(latte.$yellow)}, 0.15);
     --phone-case-bg: #{latte.$blue};
     --phone-screen-bg: #{latte.$base};
@@ -31,6 +32,7 @@ html {
     --paper-bg: #{latte.$surface0};
     --paper-text: #{latte.$text};
     --glow-color: #{rgba(latte.$blue, 0.75)};
+    --omotenashi-color: #{latte.$red};
 
     --green: #{toRGB(latte.$green)};
 
@@ -55,6 +57,7 @@ html.dark {
     --bubble-bg-default: #{mocha.$surface0};
     --box-radio-bg: rgba(#{toRGB(mocha.$yellow)}, 0.15);
     --glow-color: #{rgba(#fff, 0.75)};
+    --omotenashi-color: #{mocha.$red};
 
     --green: #{toRGB(mocha.$green)};
 

@@ -12,7 +12,7 @@ export const $storyOptions = persistentMap(
     DEFAULT_STORY_OPTIONS
 );
 
-export const getStoryOptions = (key: keyof StoryOptions) => {
+export const useStoryOptions = (key: keyof StoryOptions) => {
     const storyOptions = useStore($storyOptions);
     if (storyOptions[key]) return storyOptions[key];
     return DEFAULT_STORY_OPTIONS[key];

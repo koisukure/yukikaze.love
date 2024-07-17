@@ -1,7 +1,6 @@
 "use client";
 
-import { useStore } from "@nanostores/react";
-import { $storyOptions, getStoryOptions } from "@/utils/stores";
+import { useStoryOptions } from "@/utils/stores";
 import type { ReactNode } from "react";
 
 interface Props {
@@ -10,11 +9,13 @@ interface Props {
 }
 
 function DiffClient({ g, children }: Props) {
-    const gender = getStoryOptions("ushio__18TRIP__gender");
+    console.log("DiffClient Render");
+    const gender = useStoryOptions("ushio__18TRIP__gender");
 
     const gFull = g === "f" ? "female" : "male";
 
-    if (gFull !== gender) return null;
+    if (gFull !== gender)
+        return <div style={{ display: "none" }}>{children}</div>;
     return children;
 }
 

@@ -1,6 +1,6 @@
 import styles from "./Bubble.module.scss";
 import type { ReactNode } from "react";
-import { getStoryOptions } from "@/utils/stores";
+import { useStoryOptions } from "@/utils/stores";
 type CharacterBubbleProps = {
     children: ReactNode;
     character: string;
@@ -18,14 +18,17 @@ type MCBubbleProps = {
 type Props = CharacterBubbleProps | MCBubbleProps;
 
 function BubbleClient({ children, ...props }: Props) {
-    const firstname = getStoryOptions("ushio__18TRIP__firstName");
-    const gender = getStoryOptions("ushio__18TRIP__gender");
+    const firstname = useStoryOptions("ushio__18TRIP__firstName");
+    const gender = useStoryOptions("ushio__18TRIP__gender");
     if ("mc" in props) {
+        console.log(gender, "GENDER");
         return (
             <div
                 className={styles.bubble}
+                data-mc
                 data-character={gender === "male" ? "Kaede" : "Momiji"}
             >
+                <span style={{ display: "none" }}>{gender}</span>
                 <div className={styles.icon__wrapper}>
                     <div className={styles.icon__box}>
                         <div className={styles.icon__base} />
@@ -59,7 +62,11 @@ function BubbleClient({ children, ...props }: Props) {
             </div>
             <div className={styles.lines}>
                 <div className={styles.name}>
-                    <b>{unknown ? "???" : name || character}</b>
+                    <b>
+                        {unknown
+                            ? "???"
+                            : name?.replace(/\{name\}/, firstname) || character}
+                    </b>
                 </div>
                 {children}
             </div>
