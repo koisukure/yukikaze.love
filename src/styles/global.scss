@@ -96,7 +96,7 @@ p {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: var(--img-border-radius);
     transition: 0.2s ease;
 }
 

@@ -20,6 +20,7 @@ html {
     --drop-shadow-color: #{toRGB(color.adjust(latte.$text, $alpha: -0.5))};
 
     --header-height: 33px;
+    --img-border-radius: 8px;
 }
 
 html.dark {

@@ -117,25 +117,30 @@
 }
 
 .hologram .icon {
-    &__box::before {
-        // https://gist.github.com/lmas/6a1bd445bc7a7145245085f4a740d3f5
-        content: " ";
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: linear-gradient(
+    &__box {
+        overflow: hidden;
+
+        ::before {
+            // https://gist.github.com/lmas/6a1bd445bc7a7145245085f4a740d3f5
+            // https://codepen.io/tnixc/pen/OJeMvaW
+            content: " ";
+            display: block;
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 100%;
+            height: calc(100% + 6px);
+            background-image: linear-gradient(
                 rgba(16, 16, 18, 0) 50%,
                 rgba(255, 255, 255, 0.25) 50%
-            )
-            rgba(0, 73, 138, 0.25);
-        background-size: 100% 3px, 3px 100%;
-        mix-blend-mode: plus-lighter;
-        animation: scan 8s linear infinite;
+            );
+            background-color: rgba(0, 73, 138, 0.25);
+            background-size: 100% 3px;
+            mix-blend-mode: plus-lighter;
+            animation: scan 8s linear infinite;
 
-        @extend %icon-mask;
+            @extend %icon-mask;
+        }
     }
 }
 
@@ -149,10 +154,10 @@
 }
 
 @keyframes scan {
-    0% {
+    from {
         background-position: 0 100%, 0 100%;
     }
-    100% {
+    to {
         background-position: 0 0, 0 0;
     }
 }
