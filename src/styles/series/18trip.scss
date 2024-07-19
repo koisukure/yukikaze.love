@@ -30,6 +30,12 @@
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .obj img {
+        height: 100px;
+    }
+}
+
 .cg img {
     @extend %fit-image;
 
@@ -76,36 +82,26 @@
         margin: 0 !important; // without this it'll overflow
     }
 
+    &:hover img {
+        filter: unset;
+    }
+
     &::before {
         // https://gist.github.com/lmas/6a1bd445bc7a7145245085f4a740d3f5
-        content: " ";
-        display: block;
-        position: absolute;
+        @extend %scanlines;
         top: 0;
-        left: 0;
         bottom: 0;
         right: 0;
-        background-image: linear-gradient(
-            rgba(16, 16, 18, 0) 50%,
-            rgba(255, 255, 255, 0.15) 50%
-        );
         background-size: 100% 5px, 5px 100%;
         z-index: 1;
     }
 
     &::after {
         // https://codepen.io/tnixc/pen/OJeMvaW
-        content: " ";
-        display: block;
-        position: absolute;
+        @extend %scanlines;
         top: -150px;
-        left: 0;
         width: 100%;
         height: calc(100% + 150px);
-        background-image: linear-gradient(
-            rgba(16, 16, 18, 0) 50%,
-            rgba(255, 255, 255, 0.15) 50%
-        );
         background-size: 100% 150px;
         animation: scan 5s linear infinite;
     }
@@ -118,6 +114,17 @@
     to {
         transform: translateY(0px);
     }
+}
+
+%scanlines {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(
+        rgba(16, 16, 18, 0) 50%,
+        rgba(255, 255, 255, 0.15) 50%
+    );
+    left: 0;
 }
 
 %fit-image {
@@ -149,17 +156,19 @@
     $Yodaka: #f0e6aa,
     $Netaro: #ff32c8,
     $Yachiyo: #8eaff0,
+    // based on group
     $Sakujiro: #fffc93,
     $Nayuki: #ffa7a2,
     $Daniel: #a27fc5,
-    $Kotonojo: #c5d8c1,
-    $Koharu: #c5d8c1,
-    $Minamo: #c5d8c1,
-    $Hakkei: #c5d8c1,
-    $Hassaku: #c5d8c1,
-    $Sojun: #c5d8c1,
-    $Yumenosuke: #c5d8c1,
-    $Kodama: #c5d8c1,
-    $Yunyun: #c5d8c1,
+    $Kotonojo: #f2bdcd,
+    // based on vibes
+    $Koharu: #ab274f,
+    $Minamo: #ccccff,
+    $Hakkei: #b2beb5,
+    $Hassaku: #b2beb5,
+    $Sojun: #36454f,
+    $Yumenosuke: #fbec5d,
+    $Kodama: #b31b1b,
+    $Yunyun: #6a5acd,
     $Shumai: #65c267
 );

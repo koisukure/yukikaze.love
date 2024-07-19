@@ -1,0 +1,132 @@
+---
+
+---
+
+<div class="rain__container">
+    <svg class="defs-svg" viewBox="0 0 2 500">
+        <defs>
+            <path
+                id="rain-line"
+                fill="none"
+                stroke-width="2"
+                stroke="#FFFFFF"
+                d="M1,0 L1,1000"
+                stroke-linecap="round"
+                stroke-dasharray="50 160 70 270"></path>
+            <pattern
+                id="rain"
+                width="500"
+                height="500"
+                patternUnits="userSpaceOnUse"
+            >
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(10 0)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(200 -200)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(350 -300)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(490 -400)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(75 -20)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(140 -120)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(270 -220)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(400 -320)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(450 -420)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(105 -180)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(165 -270)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(375 -370)"></use>
+                <use
+                    class="rain-line-svg"
+                    xlink:href="#rain-line"
+                    transform="translate(460 -500)"></use>
+            </pattern>
+        </defs>
+    </svg>
+    <svg class="rain-back-svg">
+        <rect fill="url(#rain)" width="100%" height="100%"></rect>
+    </svg>
+    <slot />
+</div>
+
+<style lang="scss">
+    // https://codepen.io/alvov/pen/mmvOyb
+
+    .rain__container {
+        overflow: clip;
+        position: relative;
+
+        &:hover :global(img) {
+            filter: unset;
+        }
+    }
+
+    .defs-svg {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    .rain-back-svg {
+        position: absolute;
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .rain-line-svg {
+        animation: rain 0.4s linear infinite;
+
+        &:nth-child(3n + 0) {
+            stroke-opacity: 0.6;
+            animation-duration: 0.5s;
+        }
+
+        :nth-child(3n + 1) {
+            stroke-opacity: 0.7;
+        }
+
+        :nth-child(3n + 2) {
+            stroke-opacity: 0.9;
+            animation-duration: 0.3s;
+        }
+    }
+
+    @keyframes rain {
+        100% {
+            stroke-dashoffset: -550px;
+        }
+    }
+</style>
