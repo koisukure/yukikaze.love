@@ -64,6 +64,10 @@
     font-size: 1.35rem !important;
 }
 
+.small {
+    font-size: 0.75rem !important;
+}
+
 .vignette::before {
     box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.4);
 }
