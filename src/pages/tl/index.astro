@@ -2,6 +2,7 @@
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import storyMulti from "@/json/tl/multi.json";
 // import { getCollection } from "astro:content";
 // import FormattedDate from "../../components/FormattedDate.astro";
 
@@ -16,23 +17,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
     <body>
         <Header />
         <main>
-            <section>
-                Under construction!
-                <!-- <ul>
+            <section class="multi">
+                <ul>
                     {
-                        posts.map((post) => (
+                        storyMulti.map((s) => (
                             <li>
-                                <a href={`/tl/${post.slug}/`}>
-                                    <img width={720} height={360} src={post.data.heroImage} alt="" />
-                                    <h4 class="title">{post.data.title}</h4>
-                                    <p class="date">
-                                        <FormattedDate date={post.data.pubDate} />
-                                    </p>
+                                <a href={`/tl/${s.slug}/`}>
+                                    {s.title}
+                                    {/* <br />
+                                    {s.description} */}
                                 </a>
                             </li>
                         ))
                     }
-                </ul> -->
+                </ul>
+                Note: This is a WIP!
             </section>
         </main>
         <style lang="scss">
