@@ -1,16 +1,15 @@
 ---
-import BaseHead from "@/components/BaseHead.astro";
-import StoryIndex from "@/layouts/StoryIndex.astro";
+import StoryDirectory from "@/layouts/StoryDirectory.astro";
 
 import "@/styles/variables/tl.scss";
-import "@/styles/tl/index.scss";
+import "@/styles/tl/directory.scss";
 import "@/styles/series/18trip.scss";
 
 const title = "001: Sun Will R1ze!";
 const description =
     "Having agreed to revitalize HAMA-18’s tourism industry, the protagonist meets the current ward mayors, each with their own colorful personalities.";
 const slug = "main/1/1";
-const chapterTotal = 47;
+// const chapterTotal = 47;
 const storyTheme = "blue";
 
 const translators: Translators[] = [
@@ -283,16 +282,13 @@ const chapterSections = [
     },
 ];
 
-import banner from "@/img/st/illust/012_01.jpg";
+const banner = "assets/illust/012_01.jpg";
 const bannerPosition = "50% 32%";
+const heroImage = banner;
 ---
 
 <html lang="en">
-    <head>
-        <BaseHead title={title} description={description} />
-    </head>
-
-    <StoryIndex
+    <StoryDirectory
         banner={banner}
         bannerPosition={bannerPosition}
         title={title}
@@ -302,5 +298,6 @@ const bannerPosition = "50% 32%";
         storyTheme={storyTheme}
         translators={translators}
         proofreaders={proofreaders}
-    />
+        heroImage={heroImage}
+    >
 </html>

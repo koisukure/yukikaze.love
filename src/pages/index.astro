@@ -1,20 +1,22 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+// import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+// temp image for now
+const heroImage = "https://f002.backblazeb2.com/file/yukikaze/assets/voyage_with_you/card06_014_009_1.jpg";
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={heroImage} />
         <meta http-equiv="refresh" content={`0; url="/tl/"`} />
     </head>
     <body>
         <Header />
         <main></main>
-        <Footer />
+        <!-- <Footer /> -->
         <script>
             window.location.replace("/tl/");
         </script>

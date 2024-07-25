@@ -5,8 +5,6 @@ body {
 }
 
 main {
-    max-width: 100%;
-    margin: 0;
     width: 720px;
     max-width: calc(100% - 2em);
     margin: calc(var(--header-height) + 2em) auto auto;
@@ -31,6 +29,8 @@ h1 {
 
 img {
     margin: 1em 0;
+    border-radius: var(--img-border-radius);
+    transition: var(--transition);
 
     &:first-child {
         margin: 0 0 1em;
@@ -75,7 +75,7 @@ sup {
     position: fixed;
     bottom: 10px;
     display: grid;
-    grid-template: 1fr/1fr 1fr 1fr;
+    grid-template: 1fr / 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
     width: 720px;
@@ -86,5 +86,12 @@ sup {
 @media only screen and (max-width: 812px) {
     h1 {
         font-size: 1.5rem;
+    }
+}
+
+// dark mode
+html.dark {
+    img:hover {
+        filter: unset;
     }
 }

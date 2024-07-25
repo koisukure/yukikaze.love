@@ -2,10 +2,10 @@
 
 ## Project Structure
 
-| Page Type     | Location                                 |
-| :------------ | :--------------------------------------- |
-| Story Index   | `pages/tl/{title}.astro`                 |
-| Story Chapter | `content/tl/{title}/{chapter}/index.mdx` |
+| Page Type       | Location                                 |
+| :-------------- | :--------------------------------------- |
+| Story Directory | `pages/tl/{title}.astro`                 |
+| Story Chapter   | `content/tl/{title}/{chapter}/index.mdx` |
 
 ## Commands
 
@@ -20,7 +20,7 @@
 
 ## To-do
 
--   [ ] Finish story index page
+-   [ ] Finish story directory page
 -   [ ] Footnotes/tooltips (translation notes)
 -   [ ] Collapsible options
 -   [ ] Reader options (i.g. font size)

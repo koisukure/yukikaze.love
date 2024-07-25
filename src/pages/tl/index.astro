@@ -1,46 +1,29 @@
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
+
 import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import storyMulti from "@/json/tl/multi.json";
-// import { getCollection } from "astro:content";
-// import FormattedDate from "../../components/FormattedDate.astro";
+import ListMulti from "@/components/tl/tl/ListMulti.astro";
+import ListSingle from "@/components/tl/tl/ListSingle.astro";
 
-// const posts = (await getCollection("tl")).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+import "@/styles/tl/tl.scss";
+
+// temp image for now
+const heroImage = "https://f002.backblazeb2.com/file/yukikaze/assets/voyage_with_you/card06_014_009_1.jpg";
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={heroImage} />
     </head>
     <body>
         <Header />
         <main>
-            <section class="multi">
-                <ul>
-                    {
-                        storyMulti.map((s) => (
-                            <li>
-                                <a href={`/tl/${s.slug}/`}>
-                                    {s.title}
-                                    {/* <br />
-                                    {s.description} */}
-                                </a>
-                            </li>
-                        ))
-                    }
-                </ul>
-                Note: This is a WIP!
-            </section>
+            <div class="wrapper">
+                <ListMulti />
+                <ListSingle />
+            </div>
         </main>
-        <style lang="scss">
-            main {
-                display: flex;
-                min-height: calc(100vh - var(--header-height));
-                justify-content: center;
-                align-items: center;
-            }
-        </style>
     </body>
 </html>

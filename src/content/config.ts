@@ -10,7 +10,7 @@ const tl = defineCollection({
         previous: z.number().optional(),
         next: z.number().optional(),
 		noIndex: z.boolean().optional(),
-		heroImage: z.string().optional(),
+		heroImage: z.string(),
 	}),
 });
 

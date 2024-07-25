@@ -11,13 +11,13 @@ import "@/styles/tl/chapter.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
-const { title, description, series, story, previous, next, noIndex } =
+const { title, description, heroImage, series, story, previous, next, noIndex } =
     Astro.props;
 ---
 
 <html lang="en">
     <head>
-        <BaseHead title={title} description={description} />
+        <BaseHead title={title} description={description} image={heroImage} />
     </head>
 
     <body>
@@ -28,19 +28,19 @@ const { title, description, series, story, previous, next, noIndex } =
                     <slot />
                 </article>
             </section>
+            <div class="controls__wrapper">
+                {
+                    story || previous || next ? (
+                        <Navigation
+                            noIndex={noIndex}
+                            story={story}
+                            previous={previous}
+                            next={next}
+                        />
+                    ) : null
+                }
+                {series === "18trip" ? <StoryOptions client:only="react" /> : null}
+            </div>
         </main>
-        <div class="controls__wrapper">
-            {
-                story || previous || next ? (
-                    <Navigation
-                        noIndex={noIndex}
-                        story={story}
-                        previous={previous}
-                        next={next}
-                    />
-                ) : null
-            }
-            {series === "18trip" ? <StoryOptions client:only="react" /> : null}
-        </div>
     </body>
 </html>

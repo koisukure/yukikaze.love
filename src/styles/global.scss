@@ -96,8 +96,6 @@ p {
 img {
     max-width: 100%;
     height: auto;
-    border-radius: var(--img-border-radius);
-    transition: 0.2s ease;
 }
 
 pre {
@@ -118,10 +116,6 @@ hr {
 html.dark {
     img {
         filter: var(--img-filter);
-
-        &:hover {
-            filter: unset;
-        }
     }
 }
 

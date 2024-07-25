@@ -4,13 +4,18 @@ import AutoImport from "astro-auto-import";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import react from "@astrojs/react";
+// import swup from "@swup/astro";
 
 // https://astro.build/config
 export default defineConfig({
     site: "https://yukikaze.love",
+    image: {
+        domains: ["f002.backblazeb2.com"],
+    },
     integrations: [
         AutoImport({
             imports: [
+                "./src/components/tl/chapter/StoryImg.astro",
                 "./src/components/tl/chapter/Bubble.astro",
                 "./src/components/tl/chapter/Narration",
                 "./src/components/tl/chapter/Box.astro",
@@ -26,5 +31,6 @@ export default defineConfig({
         sitemap(),
         icon(),
         react(),
+        // swup(),
     ],
 });

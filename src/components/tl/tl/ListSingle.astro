@@ -1,0 +1,30 @@
+---
+import { Image } from "astro:assets";
+import { SITE_CDN } from "@/consts";
+import storySingle from "@/json/tl/single.json";
+---
+
+<section class="single">
+    <ul>
+        {
+            storySingle.map((s) => (
+                <a href={`/tl/${s.slug}`}>
+                    <li class="card" style=`--coverPosition: ${s.position}`>
+                        <div class="cover">
+                            <Image
+                                src={`${SITE_CDN}/${s.cover}`}
+                                alt="cover"
+                                inferSize={true}
+                                draggable="false"
+                            />
+                        </div>
+                        <div class="title">
+                            <div>{s.title}</div>
+                            <button>Read</button>
+                        </div>
+                    </li>
+                </a>
+            ))
+        }
+    </ul>
+</section>

@@ -2,6 +2,9 @@
 @use "../palette/catppuccin/latte";
 @use "../palette/catppuccin/mocha";
 
+// shadow colors generated from
+// https://www.joshwcomeau.com/shadow-palette
+
 @function toRGB($color) {
     @return red($color), green($color), blue($color);
 }
@@ -17,10 +20,11 @@ html {
     --header-background: #{toRGB(latte.$crust)};
     --blockquote-color: #{toRGB(latte.$surface2)};
 
-    --drop-shadow-color: #{toRGB(color.adjust(latte.$text, $alpha: -0.5))};
+    --shadow-color: 221, 8%, 56%;
 
     --header-height: 33px;
     --img-border-radius: 8px;
+    --transition: 0.2s ease;
 }
 
 html.dark {
@@ -35,5 +39,5 @@ html.dark {
     --blockquote-color: #{toRGB(mocha.$surface2)};
     --img-filter: brightness(80%);
 
-    --drop-shadow-color: #{toRGB(color.adjust(#000, $alpha: -0.5))};
+    --shadow-color: 240, 34%, 5%;
 }

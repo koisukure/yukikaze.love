@@ -1,9 +1,8 @@
 ---
-import BaseHead from "components/BaseHead.astro";
-import StoryIndex from "@/layouts/StoryIndex.astro";
+import StoryDirectory from "@/layouts/StoryDirectory.astro";
 
 import "styles/variables/tl.scss";
-import "styles/tl/index.scss";
+import "styles/tl/directory.scss";
 import "styles/series/18trip.scss";
 
 const title = "Voyage with You";
@@ -16,7 +15,7 @@ Before the tour, the team goes on their second study trip together with the dest
 Yukikaze ends up being overprotective and gets into an argument with Kafka. On top of that, he is starting to become unsure of his future as an athlete after hearing that his father wishes to quit coaching him.
 `;
 const slug = "voyage_with_you";
-const chapterTotal = 8;
+// const chapterTotal = 8;
 const storyTheme = "sky";
 
 const translators: Translators[] = [
@@ -109,16 +108,13 @@ const chapterSections: Section[] = [
     },
 ];
 
-import banner from "@/img/voyage_with_you/card06_014_009_0.jpg";
+const banner = "assets/voyage_with_you/card06_014_009_0.jpg";
 const bannerPosition = "50% 5%";
+const heroImage = banner;
 ---
 
 <html lang="en">
-    <head>
-        <BaseHead title={title} description={description} />
-    </head>
-
-    <StoryIndex
+    <StoryDirectory
         banner={banner}
         bannerPosition={bannerPosition}
         title={title}
@@ -129,6 +125,7 @@ const bannerPosition = "50% 5%";
         storyTheme={storyTheme}
         translators={translators}
         proofreaders={proofreaders}
+        heroImage={heroImage}
     >
         <p>
             A new project is introduced that has a goal of featuring each ward
@@ -148,5 +145,5 @@ const bannerPosition = "50% 5%";
             as an athlete after hearing that his father wishes to quit coaching
             him.
         </p>
-    </StoryIndex>
+    </StoryDirectory>
 </html>

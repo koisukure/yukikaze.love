@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import { SITE_CDN } from "@/consts";
+
+interface Props {
+    type?: string;
+    src: string;
+    alt: string;
+}
+
+const { type, src, alt } = Astro.props;
+---
+
+<p class:list={[type]}>
+    <Image src={src} alt={alt} inferSize={true} draggable="false" />
+</p>
+
+<!-- src={`${SITE_CDN}/${src}`} -->

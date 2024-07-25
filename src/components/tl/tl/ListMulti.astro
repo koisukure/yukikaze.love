@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { SITE_CDN } from "@/consts";
+import storyMulti from "@/json/tl/multi.json";
+---
+
+<section class="multi">
+    <ul>
+        {
+            storyMulti.map((m) => (
+                <a href={`/tl/${m.slug}`}>
+                    <li class="card" style=`--coverPosition: ${m.position}`>
+                        <div class="cover">
+                            <Image
+                                src={`${SITE_CDN}/${m.cover}`}
+                                alt="cover"
+                                inferSize={true}
+                                draggable="false"
+                            />
+                        </div>
+                        <div class="data">
+                            <div class="title">
+                                <strong>{m.title}</strong>
+                            </div>
+                            <div class="stats">
+                                {m.type && (
+                                    <span>{m.type}</span>
+                                )}
+                                {m.chapters && (
+                                    <span>
+                                        {m.chapters} Chapters
+                                    </span>
+                                )}
+                            </div>
+                            <div class="description">
+                                {m.description}
+                            </div>
+                        </div>
+                    </li>
+                </a>
+            ))
+        }
+    </ul>
+</section>
