@@ -2,10 +2,10 @@
 
 ## Project Structure
 
-| Page Type       | Location                                 |
-| :-------------- | :--------------------------------------- |
-| Story Directory | `pages/tl/{title}.astro`                 |
-| Story Chapter   | `content/tl/{title}/{chapter}/index.mdx` |
+| Page Type       | Location                           |
+| :-------------- | :--------------------------------- |
+| Story Directory | `pages/tl/{title}.astro`           |
+| Story Chapter   | `content/tl/{title}/{chapter}.mdx` |
 
 ## Commands
 
