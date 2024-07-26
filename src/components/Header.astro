@@ -6,12 +6,10 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <header>
     <div class="site-title">
-        <a href="/tl/">{SITE_TITLE}</a>
+        <a href="/tl">{SITE_TITLE}</a>
     </div>
-    <nav class="internal-links">
-        <!-- <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/tl">Translations</HeaderLink> -->
-    </nav>
+    <!-- <nav class="internal-links">
+    </nav> -->
     <div class="theme-toggle">
         <ThemeToggle />
     </div>
@@ -36,8 +34,7 @@ import ThemeToggle from "./ThemeToggle.astro";
         font-size: 1.2rem;
     }
 
-    div,
-    nav {
+    div {
         display: flex;
         align-content: center;
     }
@@ -52,5 +49,6 @@ import ThemeToggle from "./ThemeToggle.astro";
 
     .theme-toggle {
         justify-self: flex-end;
+        grid-column: 3 / 4;
     }
 </style>

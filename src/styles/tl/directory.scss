@@ -228,10 +228,3 @@ main {
         }
     }
 }
-
-// dark mode
-html.dark {
-    .banner {
-        filter: var(--img-filter);
-    }
-}
