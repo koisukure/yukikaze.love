@@ -4,7 +4,7 @@
     line-height: 1.2;
     align-items: center;
     grid-template-columns: auto 1fr;
-    transition: grid-template 0.2s ease;
+    transition: var(--transition);
     grid-gap: 10px;
 
     .lines {
@@ -15,7 +15,7 @@
         p {
             font-size: 1rem;
             margin: 0.35em 0;
-            transition: transform 0.2s ease;
+            transition: var(--transition);
 
             &:hover {
                 transform: translate(2px, 0px);

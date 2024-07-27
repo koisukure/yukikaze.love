@@ -5,7 +5,7 @@
     line-height: 1.2;
     column-gap: 10px;
     row-gap: 1px;
-    transition: 0.2s ease;
+    transition: var(--transition);
 
     .lines {
         display: flex;
@@ -20,7 +20,7 @@
             margin: 0;
             border-radius: var(--bubble-line-border);
             position: relative;
-            transition: transform 0.2s ease;
+            transition: var(--transition);
 
             &.t {
                 color: var(--bubble-text-thought);
@@ -76,7 +76,7 @@
         overflow: hidden;
         width: var(--bubble-icon-size);
         height: var(--bubble-icon-size);
-        transition: 0.2s ease;
+        transition: var(--transition);
     }
 
     &__base {

@@ -84,7 +84,7 @@ main {
         border-radius: 5px;
         background-color: rgba(var(--si-color), 0.2);
         padding: 5px 10px;
-        transition: background-color 0.2s ease;
+        transition: var(--transition);
 
         &:hover {
             background-color: rgba(var(--si-color), 0.3);
