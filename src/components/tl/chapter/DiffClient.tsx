@@ -9,7 +9,7 @@ interface Props {
 }
 
 function DiffClient({ g, children }: Props) {
-    console.log("DiffClient Render");
+    // console.log("DiffClient Render");
     const gender = useStoryOptions("ushio__18TRIP__gender");
 
     const gFull = g === "f" ? "female" : "male";

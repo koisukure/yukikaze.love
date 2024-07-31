@@ -33,7 +33,7 @@ function BubbleClient({
     const firstname = useStoryOptions("ushio__18TRIP__firstName");
     const gender = useStoryOptions("ushio__18TRIP__gender");
     if ("mc" in props) {
-        console.log(gender, "GENDER");
+        // console.log(gender, "GENDER");
         return (
             <div
                 className={`${styles.bubble}${
@@ -44,7 +44,7 @@ function BubbleClient({
                 data-mc
                 data-character={gender === "male" ? "Kaede" : "Momiji"}
             >
-                <span style={{ display: "none" }}>{gender}</span>
+                {/* <span style={{ display: "none" }}>{gender}</span> */}
                 <div className={styles.icon__wrapper}>
                     <div className={styles.icon__box}>
                         <div className={styles.icon__base} />
