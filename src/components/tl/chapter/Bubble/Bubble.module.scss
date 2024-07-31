@@ -16,7 +16,7 @@
             font-size: 1rem;
             align-self: flex-start;
             background-color: var(--bubble-bg, var(--bubble-bg-default));
-            padding: 0.65em;
+            padding: 0.65rem; // rem to account for font-size changes
             margin: 0;
             border-radius: var(--bubble-line-border);
             position: relative;
@@ -114,6 +114,10 @@
 
 .hidden .icon__box::after {
     @extend %icon-silhouette;
+}
+
+.avatar {
+    --icon: var(--avatar);
 }
 
 .hologram .icon {

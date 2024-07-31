@@ -1,4 +1,4 @@
-.narration {
+.narration.bubble {
     display: grid;
     margin: 1em 0;
     line-height: 1.2;
@@ -30,6 +30,13 @@
         display: block;
         border-bottom: solid var(--bubble-line-color) 1px;
     }
+}
+
+.narration.novel {
+    margin: 1.5em 1em;
+    padding: 0 1em;
+    border: solid var(--bubble-line-color) 1px;
+    border-radius: var(--img-border-radius);
 }
 
 @media (max-width: 650px) {

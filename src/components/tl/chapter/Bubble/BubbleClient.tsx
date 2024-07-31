@@ -10,21 +10,37 @@ type CharacterBubbleProps = {
     hologram?: boolean;
     shake?: boolean;
     glow?: boolean;
+    avatar?: boolean;
 };
 type MCBubbleProps = {
     children: ReactNode;
     mc: true;
+    unknown?: boolean;
+    hidden?: boolean;
+    name?: string;
+    avatar?: boolean;
 };
 type Props = CharacterBubbleProps | MCBubbleProps;
 
-function BubbleClient({ children, ...props }: Props) {
+function BubbleClient({
+    children,
+    hidden,
+    unknown,
+    name,
+    avatar,
+    ...props
+}: Props) {
     const firstname = useStoryOptions("ushio__18TRIP__firstName");
     const gender = useStoryOptions("ushio__18TRIP__gender");
     if ("mc" in props) {
         console.log(gender, "GENDER");
         return (
             <div
-                className={styles.bubble}
+                className={`${styles.bubble}${
+                    hidden ? ` ${styles.hidden}` : ""
+                }${unknown ? ` ${styles.unknown}` : ""}${
+                    avatar ? ` ${styles.avatar}` : ""
+                }`}
                 data-mc
                 data-character={gender === "male" ? "Kaede" : "Momiji"}
             >
@@ -36,14 +52,21 @@ function BubbleClient({ children, ...props }: Props) {
                 </div>
                 <div className={styles.lines}>
                     <div className={styles.name}>
-                        <strong>{firstname || "MC"}</strong>
+                        <strong>
+                            {name
+                                ? name?.replace(/\{name\}/, firstname) ||
+                                  firstname
+                                : unknown
+                                ? "???"
+                                : firstname}
+                        </strong>
                     </div>
                     {children}
                 </div>
             </div>
         );
     }
-    const { character, name, hidden, unknown, hologram, shake, glow } = props;
+    const { character, hologram, shake, glow } = props;
     return (
         <div
             className={`${styles.bubble}${
@@ -52,7 +75,7 @@ function BubbleClient({ children, ...props }: Props) {
                 glow ? ` ${styles.glow}` : ""
             }${hidden ? ` ${styles.hidden}` : ""}${
                 unknown ? ` ${styles.unknown}` : ""
-            }`}
+            }${avatar ? ` ${styles.avatar}` : ""}`}
             data-character={character}
         >
             <div className={styles.icon__wrapper}>
@@ -63,9 +86,11 @@ function BubbleClient({ children, ...props }: Props) {
             <div className={styles.lines}>
                 <div className={styles.name}>
                     <b>
-                        {unknown
+                        {name
+                            ? name?.replace(/\{name\}/, firstname) || character
+                            : unknown
                             ? "???"
-                            : name?.replace(/\{name\}/, firstname) || character}
+                            : character}
                     </b>
                 </div>
                 {children}
