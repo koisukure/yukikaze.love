@@ -9,7 +9,7 @@ const tl = defineCollection({
         story: z.string().optional(),
         previous: z.number().optional(),
         next: z.number().optional(),
-		noIndex: z.boolean().optional(),
+		noDir: z.boolean().optional(),
 		heroImage: z.string(),
 	}),
 });

@@ -1,0 +1,59 @@
+@use "sass:color";
+@use "../../palette/catppuccin/latte";
+@use "../../palette/catppuccin/mocha";
+
+@function toHSL($color) {
+    @return hue($color), saturation($color), lightness($color);
+}
+
+html {
+    --bubble-text: hsl(var(--text-primary));
+    --bubble-text-thought: hsl(var(--text-secondary));
+    --bubble-bg-default: #{latte.$surface0};
+    --bubble-icon-border: 12px 4px;
+    --bubble-icon-size: 50px;
+    --bubble-icon-sizeSmall: 45px;
+    --bubble-name-case: uppercase;
+    --bubble-name-text: hsl(var(--text-secondary));
+    --bubble-line-border: 15px;
+    --bubble-line-size: 1rem;
+    --bubble-line-gap: 0.15rem;
+    --bubble-line-color: hsl(var(--blockquote-color));
+
+    --box-radio-bg: hsla(#{toHSL(latte.$yellow)}, 0.15);
+
+    --phone-case-bg: #{latte.$blue};
+    --phone-screen-bg: #{latte.$base};
+    --phone-header-bg: #{latte.$sky};
+    --phone-header-text: #{latte.$base};
+    --phone-sent-bg: #{latte.$sky};
+    --phone-sent-text: #{latte.$base};
+    --phone-received-bg: #{latte.$surface0};
+    --phone-received-text: #{latte.$text};
+
+    --paper-bg: #{latte.$surface0};
+    --paper-text: #{latte.$text};
+
+    --glow-color: hsla(#{toHSL(latte.$blue), 0.7});
+
+    --omotenashi-color: #{latte.$red};
+
+    --green: #{toHSL(latte.$green)};
+
+    [data-character] {
+        --bubble-bg: hsl(var(--hue), 21%, 83%);
+    }
+}
+
+html.dark {
+    --bubble-bg-default: #{mocha.$surface0};
+    --box-radio-bg: hsla(#{toHSL(mocha.$yellow)}, 0.15);
+    --glow-color: hsla(#{toHSL(mocha.$text), 0.75});
+    --omotenashi-color: #{mocha.$red};
+
+    --green: #{toHSL(mocha.$green)};
+
+    [data-character] {
+        --bubble-bg: hsl(var(--hue), 21%, 23%);
+    }
+}

@@ -1,8 +1,9 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/consts";
 
-import BaseHead from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import ListMulti from "@/components/tl/tl/ListMulti.astro";
 import ListSingle from "@/components/tl/tl/ListSingle.astro";
 
@@ -25,5 +26,6 @@ const heroImage = "https://f002.backblazeb2.com/file/yukikaze/assets/voyage_with
                 <ListSingle />
             </div>
         </main>
+        <Footer />
     </body>
 </html>

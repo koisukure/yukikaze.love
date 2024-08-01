@@ -1,0 +1,71 @@
+@use "sass:color";
+@use "../../palette/catppuccin/latte";
+@use "../../palette/catppuccin/mocha";
+
+@function toHSL($color) {
+    @return hue($color), saturation($color), lightness($color);
+}
+
+html {
+    --banner-height: 250px;
+
+    [data-story-theme="mauve"] {
+        --si-color: #{toHSL(latte.$mauve)};
+    }
+
+    [data-story-theme="sky"] {
+        --si-color: #{toHSL(latte.$sky)};
+    }
+
+    [data-story-theme="blue"] {
+        --si-color: #{toHSL(latte.$blue)};
+    }
+
+    [data-story-theme="yellow"] {
+        --si-color: #{toHSL(latte.$yellow)};
+    }
+
+    [data-story-theme="peach"] {
+        --si-color: #{toHSL(latte.$peach)};
+    }
+
+    [data-story-theme="lavender"] {
+        --si-color: #{toHSL(latte.$yellow)};
+    }
+}
+
+html.dark {
+    [data-character] {
+        --bubble-bg: hsl(var(--hue), 21%, 23%);
+    }
+
+    [data-story-theme="mauve"] {
+        --si-color: #{toHSL(mocha.$mauve)};
+    }
+
+    [data-story-theme="sky"] {
+        --si-color: #{toHSL(mocha.$sky)};
+    }
+
+    [data-story-theme="blue"] {
+        --si-color: #{toHSL(mocha.$blue)};
+    }
+
+    [data-story-theme="yellow"] {
+        --si-color: #{toHSL(mocha.$yellow)};
+    }
+
+    [data-story-theme="peach"] {
+        --si-color: #{toHSL(mocha.$peach)};
+    }
+
+    [data-story-theme="lavender"] {
+        --si-color: #{toHSL(mocha.$yellow)};
+    }
+}
+
+@media only screen and (max-width: 812px) {
+    html {
+        --banner-height: 125px;
+    }
+}

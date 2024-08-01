@@ -2,16 +2,17 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 import Navigation from "@/components/tl/chapter/Navigation.astro";
 import StoryOptions from "@/components/tl/chapter/StoryOptions";
 
-import "@/styles/variables/tl.scss";
+import "@/styles/variables/tl/chapter.scss";
 import "@/styles/tl/chapter.scss";
 
 type Props = CollectionEntry<"tl">["data"];
 
-const { title, description, heroImage, series, story, previous, next, noIndex } =
+const { title, description, heroImage, series, story, previous, next, noDir } =
     Astro.props;
 ---
 
@@ -32,7 +33,7 @@ const { title, description, heroImage, series, story, previous, next, noIndex } 
                 {
                     story || previous || next ? (
                         <Navigation
-                            noIndex={noIndex}
+                            noDir={noDir}
                             story={story}
                             previous={previous}
                             next={next}
@@ -42,5 +43,6 @@ const { title, description, heroImage, series, story, previous, next, noIndex } 
                 {series === "18trip" ? <StoryOptions client:only="react" /> : null}
             </div>
         </main>
+        <Footer />
     </body>
 </html>

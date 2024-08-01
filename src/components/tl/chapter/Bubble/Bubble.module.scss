@@ -14,6 +14,7 @@
 
         p {
             font-size: 1rem;
+            line-height: 1.2;
             align-self: flex-start;
             background-color: var(--bubble-bg, var(--bubble-bg-default));
             padding: 0.65rem; // rem to account for font-size changes
@@ -135,10 +136,10 @@
             width: 100%;
             height: calc(100% + 6px);
             background-image: linear-gradient(
-                rgba(16, 16, 18, 0) 50%,
-                rgba(255, 255, 255, 0.25) 50%
+                hsla(16, 16, 18, 0) 50%,
+                hsla(255, 255, 255, 0.25) 50%
             );
-            background-color: rgba(0, 73, 138, 0.25);
+            background-color: hsla(0, 73, 138, 0.25);
             background-size: 100% 3px;
             mix-blend-mode: plus-lighter;
             animation: scan 8s linear infinite;
@@ -155,6 +156,19 @@
 
 .shake .icon__box {
     animation: shake 1s ease-in-out infinite;
+}
+
+.flip {
+    .icon__base {
+        transform: scaleX(-1);
+    }
+
+    &.unknown,
+    &.hidden {
+        .icon__box::after {
+            transform: scaleX(-1);
+        }
+    }
 }
 
 @keyframes scan {

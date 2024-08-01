@@ -128,6 +128,37 @@ I promise!
 …I still remember that day.
 </Bubble>
 
+export const messages = [
+    {
+        character: "Kafka",
+        texts: [
+            "Surgery’s done",
+        ],
+    },
+    {
+        sent: true,
+        texts: [
+            "WHAT?!",
+            "YOUR SURGERY? IT’S DONE?? WHAT???",
+        ],
+    },
+    {
+        character: "Kafka",
+        texts: [
+            "Sorry, everything happened so suddenly I didn’t have time to tell you",
+        ],
+    },
+    {
+        sent: true,
+        texts: [
+            "How did it go?",
+            "Kafka?",
+            "Are you okay?",
+            "HELLO?",
+        ],
+    },
+]
+
 <Phone to="Oguro Kafka">
 <div data-character="Kafka"><div>
     <p>Surgery’s done</p>
@@ -329,15 +360,15 @@ Oh, the date written on it…
 
 <StoryImg src="https://f002.backblazeb2.com/file/yukikaze/assets/illust/003_01.jpg" alt="003_01" type="cg sepia" />
 
-<Bubble mc>
+<Bubble mc hidden>
 Let’s go on a trip after the rain stops. Together.
 </Bubble>
 
-<Bubble character="Kafka">
+<Bubble character="Kafka" hidden>
 You want me to go with you?
 </Bubble>
 
-<Bubble mc>
+<Bubble mc hidden>
 Yeah. Just the two of us.
 </Bubble>
 

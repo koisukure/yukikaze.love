@@ -5,11 +5,12 @@ import { SITE_CDN } from "@/consts";
 
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 import ChapterNav from "@/components/tl/directory/ChapterNav.astro";
 import InfoGrid from "@/components/tl/directory/InfoGrid.astro";
 
-import "@/styles/variables/tl.scss";
+import "@/styles/variables/tl/directory.scss";
 import "@/styles/tl/directory.scss";
 
 interface Props {
@@ -83,5 +84,6 @@ const {
                 <ChapterNav chapterSections={chapterSections} slug={slug} />
             </div>
         </main>
+        <Footer />
     </body>
 </html>

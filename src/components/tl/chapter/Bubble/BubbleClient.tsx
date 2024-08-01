@@ -11,6 +11,7 @@ type CharacterBubbleProps = {
     shake?: boolean;
     glow?: boolean;
     avatar?: boolean;
+    flip?: boolean;
 };
 type MCBubbleProps = {
     children: ReactNode;
@@ -66,7 +67,7 @@ function BubbleClient({
             </div>
         );
     }
-    const { character, hologram, shake, glow } = props;
+    const { character, hologram, shake, glow, flip } = props;
     return (
         <div
             className={`${styles.bubble}${
@@ -75,7 +76,9 @@ function BubbleClient({
                 glow ? ` ${styles.glow}` : ""
             }${hidden ? ` ${styles.hidden}` : ""}${
                 unknown ? ` ${styles.unknown}` : ""
-            }${avatar ? ` ${styles.avatar}` : ""}`}
+            }${avatar ? ` ${styles.avatar}` : ""}${
+                flip ? ` ${styles.flip}` : ""
+            }`}
             data-character={character}
         >
             <div className={styles.icon__wrapper}>

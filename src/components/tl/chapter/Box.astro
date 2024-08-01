@@ -12,7 +12,6 @@ const { type } = Astro.props;
 
 <style lang="scss">
     .box {
-        line-height: 1.2;
 
         &.radio {
             background-color: var(--box-radio-bg);
@@ -41,6 +40,10 @@ const { type } = Astro.props;
             padding: 1em;
             margin: 0 2em 1em;
             filter: var(--img-filter);
+        }
+
+        :global(p) {
+            line-height: 1.2;
         }
     }
 </style>

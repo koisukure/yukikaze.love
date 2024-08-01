@@ -34,8 +34,8 @@ body {
         sans-serif;
     margin: 0;
     padding: 0;
-    background: rgb(var(--background-primary));
-    color: rgb(var(--text-primary));
+    background: hsl(var(--background-primary));
+    color: hsl(var(--text-primary));
 }
 
 *,
@@ -65,7 +65,6 @@ select {
     font: inherit;
 }
 
-p,
 h1,
 h2,
 h3,
@@ -82,15 +81,22 @@ b {
 }
 
 a {
-    color: rgb(var(--accent-color));
+    color: hsl(var(--accent-color));
+    transition: var(--transition);
 
     &:hover {
-        color: rgb(var(--accent-color));
+        color: color-mix(
+            in oklab,
+            hsl(var(--text-primary)) 50%,
+            hsl(var(--accent-color))
+        );
     }
 }
 
 p {
+    overflow-wrap: break-word;
     margin-bottom: 1em;
+    line-height: 1.5;
 }
 
 img {
@@ -109,7 +115,7 @@ pre > code {
 
 hr {
     border: none;
-    border-top: 1px solid rgb(var(--blockquote-color));
+    border-top: 1px solid hsl(var(--blockquote-color));
     margin: 1.5em 0;
 }
 
