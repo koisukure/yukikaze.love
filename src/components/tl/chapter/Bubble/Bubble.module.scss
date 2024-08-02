@@ -128,7 +128,7 @@
         ::before {
             // https://gist.github.com/lmas/6a1bd445bc7a7145245085f4a740d3f5
             // https://codepen.io/tnixc/pen/OJeMvaW
-            content: " ";
+            content: "";
             display: block;
             position: absolute;
             top: -3px;
@@ -168,6 +168,31 @@
         .icon__box::after {
             transform: scaleX(-1);
         }
+    }
+}
+
+.screen .icon__box {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        // https://gist.github.com/lmas/6a1bd445bc7a7145245085f4a740d3f5
+        @extend %scanlines;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-size: 100% 3px, 3px 100%;
+        z-index: 1;
+    }
+
+    &::after {
+        // https://codepen.io/tnixc/pen/OJeMvaW
+        @extend %scanlines;
+        top: -15px;
+        width: 100%;
+        height: calc(100% + 15px);
+        background-size: 100% 15px;
+        animation: scan 5s linear infinite;
     }
 }
 
@@ -392,13 +417,6 @@
     }
 }
 
-@media (max-width: 650px) {
-    .icon__box {
-        width: var(--bubble-icon-sizeSmall);
-        height: var(--bubble-icon-sizeSmall);
-    }
-}
-
 %icon-silhouette {
     content: "";
     display: block;
@@ -423,4 +441,15 @@
     );
     mask-size: 100%;
     mask-position: 100%;
+}
+
+%scanlines {
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: linear-gradient(
+        hsla(16, 16, 18, 0) 50%,
+        hsla(255, 255, 255, 0.15) 50%
+    );
+    left: 0;
 }

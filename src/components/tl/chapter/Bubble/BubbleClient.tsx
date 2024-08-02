@@ -12,6 +12,7 @@ type CharacterBubbleProps = {
     glow?: boolean;
     avatar?: boolean;
     flip?: boolean;
+    screen?: boolean;
 };
 type MCBubbleProps = {
     children: ReactNode;
@@ -67,17 +68,17 @@ function BubbleClient({
             </div>
         );
     }
-    const { character, hologram, shake, glow, flip } = props;
+    const { character, hologram, shake, glow, flip, screen } = props;
     return (
         <div
-            className={`${styles.bubble}${
-                hologram ? ` ${styles.hologram}` : ""
-            }${shake ? ` ${styles.shake}` : ""}${
-                glow ? ` ${styles.glow}` : ""
-            }${hidden ? ` ${styles.hidden}` : ""}${
-                unknown ? ` ${styles.unknown}` : ""
-            }${avatar ? ` ${styles.avatar}` : ""}${
-                flip ? ` ${styles.flip}` : ""
+            className={`${styles.bubble}${hidden ? ` ${styles.hidden}` : ""}
+            ${unknown ? ` ${styles.unknown}` : ""}
+            ${hologram ? ` ${styles.hologram}` : ""}${
+                shake ? ` ${styles.shake}` : ""
+            }${glow ? ` ${styles.glow}` : ""}${
+                avatar ? ` ${styles.avatar}` : ""
+            }${flip ? ` ${styles.flip}` : ""}${
+                screen ? ` ${styles.screen}` : ""
             }`}
             data-character={character}
         >
@@ -88,13 +89,13 @@ function BubbleClient({
             </div>
             <div className={styles.lines}>
                 <div className={styles.name}>
-                    <b>
+                    <strong>
                         {name
                             ? name?.replace(/\{name\}/, firstname) || character
                             : unknown
                             ? "???"
                             : character}
-                    </b>
+                    </strong>
                 </div>
                 {children}
             </div>

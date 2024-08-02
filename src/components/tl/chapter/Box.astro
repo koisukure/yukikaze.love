@@ -12,7 +12,6 @@ const { type } = Astro.props;
 
 <style lang="scss">
     .box {
-
         &.radio {
             background-color: var(--box-radio-bg);
             text-align: center;
@@ -35,11 +34,10 @@ const { type } = Astro.props;
         }
 
         &.paper {
-            background-color: var(--paper-bg);
-            color: var(--paper-text);
+            background-color: var(--box-paper-bg);
             padding: 1em;
-            margin: 0 2em 1em;
-            filter: var(--img-filter);
+            margin: 1em 2em;
+            // filter: var(--img-filter);
         }
 
         :global(p) {

@@ -1,0 +1,29 @@
+---
+interface Props {
+    texts: Array<string>;
+}
+
+const { texts } = Astro.props;
+---
+
+<!-- {
+    texts.map((t) => {
+        return (
+            <>
+                {t.sent === true ? (
+                    <>
+                        <div class="sent">
+                            t.texts(map)
+                        </div>
+                    </>
+                )}
+            </d>
+        );
+    })
+} -->
+
+{texts.map((t) => (
+        <p>{t}</p>
+    )
+)}
+

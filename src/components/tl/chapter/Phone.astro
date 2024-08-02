@@ -1,26 +1,67 @@
 ---
-interface Props {
-    to: string;
+import PhoneMsg from './PhoneMsg.astro';
+
+type ChatProps = {
+    character?: string;
+    sent?: boolean;
+    texts: Array<string>;
 }
 
-const { to } = Astro.props;
+interface Props {
+    to: string;
+    chat: ChatProps[];
+}
+
+const { to, chat } = Astro.props;
 ---
 
 <div class="phone">
-    <div class="msg-header">{to}</div>
+    <div class="header">{to}</div>
     <div class="msg">
-        <slot />
+        {
+            chat.map((c) => (
+                <>
+                    {
+                        c.sent === true ? (
+                            <div class="sent">
+                                <PhoneMsg texts={c.texts} />
+                            </div>
+                        ) : (
+                            <div data-character={c.character}>
+                                <div>
+                                    <PhoneMsg texts={c.texts} />
+                                </div>
+                            </div>
+                        )
+                    }
+                </>
+            ))
+        }
     </div>
 </div>
 
-<style lang="scss" is:global>
+<style lang="scss">
     .phone {
         max-width: 350px;
         margin: 0 auto;
         background-color: var(--phone-case-bg);
         padding: 5px;
         border-radius: 30px;
-        filter: var(--img-filter);
+        // filter: var(--img-filter);
+
+        .header {
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            background-color: var(--phone-header-bg);
+            color: var(--phone-header-text);
+            border-radius: 25px 25px 0 0;
+            padding: 15px;
+            border-top: 5px solid #000;
+            border-right: 5px solid #000;
+            border-left: 5px solid #000;
+        }
 
         .msg {
             display: flex;
@@ -31,22 +72,9 @@ const { to } = Astro.props;
             border-right: 5px solid #000;
             border-left: 5px solid #000;
             border-bottom: 5px solid #000;
-
-            &-header {
-                font-size: 1.1rem;
-                display: flex;
-                justify-content: center;
-                background-color: var(--phone-header-bg);
-                color: var(--phone-header-text);
-                border-radius: 25px 25px 0 0;
-                padding: 15px;
-                border-top: 5px solid #000;
-                border-right: 5px solid #000;
-                border-left: 5px solid #000;
-            }
         }
 
-        p {
+        :global(p) {
             max-width: calc(350px / 2);
             padding: 10px;
             line-height: 1.1;
@@ -64,7 +92,7 @@ const { to } = Astro.props;
             flex-direction: column;
             align-items: flex-end;
 
-            p {
+            :global(p) {
                 background-color: var(--phone-sent-bg);
                 color: var(--phone-sent-text);
 
@@ -78,7 +106,7 @@ const { to } = Astro.props;
             }
         }
 
-        [data-character] {
+        :global([data-character]) {
             display: inline-grid;
             grid-template-columns: auto 1fr;
 
@@ -88,7 +116,7 @@ const { to } = Astro.props;
                 align-items: flex-start;
             }
 
-            p {
+            :global(p) {
                 background-color: var(--phone-received-bg);
                 color: var(--phone-received-text);
 
@@ -105,6 +133,7 @@ const { to } = Astro.props;
                 height: 40px;
                 border-radius: 50%;
                 background: 100%/100% var(--msg-icon);
+                filter: var(--img-filter);
             }
 
             &:not(:last-child) {

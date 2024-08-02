@@ -39,13 +39,3 @@
     border: solid var(--bubble-line-color) 1px;
     border-radius: var(--img-border-radius);
 }
-
-@media (max-width: 650px) {
-    .narration {
-        grid-template: 1fr / var(--bubble-icon-sizeSmall) 1fr;
-
-        &::before {
-            width: var(--bubble-icon-sizeSmall);
-        }
-    }
-}

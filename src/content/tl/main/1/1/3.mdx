@@ -202,11 +202,16 @@ Kafka’s really such a daredevil. For better and for worse…
 A PeChat message… Oh, it’s from Yuki-nii.
 </Bubble>
 
-<Phone to="Kamina Yukikaze">
-<div data-character="Yukikaze"><div>
-    <p>We just landed. Can’t wait to see you again</p>
-</div></div>
-</Phone>
+export const messages = [
+    {
+        character: "Yukikaze",
+        texts: [
+            "We just landed. Can’t wait to see you again",
+        ],
+    },
+]
+
+<Phone to="Kamina Yukikaze" chat={messages} />
 
 <Bubble mc>
 <p class="t">(...He’s home. I finally get to see him again.)</p>

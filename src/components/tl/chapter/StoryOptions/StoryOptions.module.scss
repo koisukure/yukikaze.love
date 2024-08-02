@@ -17,6 +17,7 @@ select {
     backdrop-filter: blur(5px);
     color: hsl(var(--text-primary));
     grid-column: 3 / 4;
+    transition: var(--transition);
 
     &:hover {
         cursor: pointer;
@@ -111,6 +112,7 @@ select {
 
     &:hover {
         background-color: hsla(var(--accent-color), 0.25);
+        cursor: pointer;
     }
 
     &:focus {

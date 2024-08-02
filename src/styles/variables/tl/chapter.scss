@@ -12,7 +12,6 @@ html {
     --bubble-bg-default: #{latte.$surface0};
     --bubble-icon-border: 12px 4px;
     --bubble-icon-size: 50px;
-    --bubble-icon-sizeSmall: 45px;
     --bubble-name-case: uppercase;
     --bubble-name-text: hsl(var(--text-secondary));
     --bubble-line-border: 15px;
@@ -21,18 +20,16 @@ html {
     --bubble-line-color: hsl(var(--blockquote-color));
 
     --box-radio-bg: hsla(#{toHSL(latte.$yellow)}, 0.15);
+    --box-paper-bg: #{latte.$surface1};
 
     --phone-case-bg: #{latte.$blue};
-    --phone-screen-bg: #{latte.$base};
+    --phone-screen-bg: #{latte.$mantle};
     --phone-header-bg: #{latte.$sky};
     --phone-header-text: #{latte.$base};
     --phone-sent-bg: #{latte.$sky};
     --phone-sent-text: #{latte.$base};
     --phone-received-bg: #{latte.$surface0};
     --phone-received-text: #{latte.$text};
-
-    --paper-bg: #{latte.$surface0};
-    --paper-text: #{latte.$text};
 
     --glow-color: hsla(#{toHSL(latte.$blue), 0.7});
 
@@ -47,13 +44,32 @@ html {
 
 html.dark {
     --bubble-bg-default: #{mocha.$surface0};
+
     --box-radio-bg: hsla(#{toHSL(mocha.$yellow)}, 0.15);
+    --box-paper-bg: #{mocha.$surface1};
+
+    --phone-case-bg: #{mocha.$blue};
+    --phone-screen-bg: #{mocha.$mantle};
+    --phone-header-bg: #{mocha.$sky};
+    --phone-header-text: #{mocha.$crust};
+    --phone-sent-bg: #{mocha.$sky};
+    --phone-sent-text: #{mocha.$base};
+    --phone-received-bg: #{mocha.$surface0};
+    --phone-received-text: #{mocha.$text};
+
     --glow-color: hsla(#{toHSL(mocha.$text), 0.75});
+
     --omotenashi-color: #{mocha.$red};
 
     --green: #{toHSL(mocha.$green)};
 
     [data-character] {
         --bubble-bg: hsl(var(--hue), 21%, 23%);
+    }
+}
+
+@media only screen and (max-width: 812px) {
+    html {
+        --bubble-icon-size: 45px;
     }
 }

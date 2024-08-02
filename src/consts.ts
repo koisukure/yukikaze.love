@@ -4,3 +4,4 @@
 export const SITE_TITLE = '♡';
 export const SITE_DESCRIPTION = '18TRIP Translations';
 export const SITE_CDN = "https://f002.backblazeb2.com/file/yukikaze";
+export const SITE_MASTER = "Koi";

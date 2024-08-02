@@ -1,12 +1,18 @@
 ---
+import { SITE_MASTER } from "@/consts";
+import { Icon } from "astro-icon/components";
+
 const today = new Date();
 ---
 
 <footer>
-	<div>
-        &copy; {today.getFullYear()} • Koi
-    <br/>
-        Theme by <a href="https://tomoya.moe">Ren</a> & <a href="https://yuukun.dev">Yuu</a>
+    <div class="credits">
+        <div class="copy">
+            &#127279; {today.getFullYear()}&nbsp;<Icon name="north-star" />&nbsp;{SITE_MASTER}
+        </div>
+        <div>
+            Theme by <a href="https://tomoya.moe">Ren</a> &amp; <a href="https://yuukun.dev">Yuu</a>
+        </div>
     </div>
 </footer>
 
@@ -20,16 +26,16 @@ const today = new Date();
             transparent,
             hsl(var(--footer-background))
           );
-		color: hsla(var(--text-secondary), 0.75);
+		color: hsla(var(--text-secondary), 0.55);
 		align-items: center;
 	}
 
     a {
         text-decoration: none;
-        color: hsla(var(--accent-color), 0.75);
+        color: hsla(var(--accent-color), 0.55);
     }
 
-    div {
+    .credits {
         transition: var(--transition);
         text-align: center;
 
@@ -40,5 +46,11 @@ const today = new Date();
                 color: hsl(var(--accent-color));
             }
         }
+    }
+
+    .copy {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 </style>
