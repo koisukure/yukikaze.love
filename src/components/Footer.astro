@@ -22,6 +22,7 @@ const today = new Date();
         flex-direction: column;
         width: 100%;
 		padding: 4em 1em 3em;
+        font-size: 0.95rem;
 		background: linear-gradient(
             transparent,
             hsl(var(--footer-background))
@@ -31,8 +32,26 @@ const today = new Date();
 	}
 
     a {
+        position: relative;
         text-decoration: none;
         color: hsla(var(--accent-color), 0.55);
+ 
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background: hsl(var(--accent-color));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        &:hover::before {
+            transform: scaleX(1);
+        }
     }
 
     .credits {

@@ -31,7 +31,7 @@ main {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        object-position: var(--bannerPosition);
+        object-position: 50% var(--bannerPosition, 50%);
     }
 }
 
@@ -66,7 +66,7 @@ main {
 
         &:hover {
             background-color: hsl(var(--si-color));
-            color: hsl(var(--background-primary));
+            color: hsl(var(--filled-color));
         }
     }
 }
@@ -138,7 +138,7 @@ main {
 
         &:hover {
             color: color-mix(
-                in hsl,
+                in oklch,
                 hsl(var(--si-color)) 65%,
                 hsl(var(--background-primary))
             );
@@ -166,7 +166,6 @@ main {
         grid-template-rows: auto;
         // margin: -50px 0 0;
         // padding: 4.35em 1.25em 1.5em;
-        grid-gap: 1em;
         gap: 1em;
     }
 
@@ -221,7 +220,6 @@ main {
 
         .card__wrapper {
             padding-right: 0.3em;
-            grid-gap: 0.2em 0.7em;
             gap: 0.2em 0.7em;
         }
     }

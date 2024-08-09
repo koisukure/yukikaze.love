@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
     texts: Array<string>;
 }
@@ -6,24 +8,16 @@ interface Props {
 const { texts } = Astro.props;
 ---
 
-<!-- {
-    texts.map((t) => {
-        return (
-            <>
-                {t.sent === true ? (
-                    <>
-                        <div class="sent">
-                            t.texts(map)
-                        </div>
-                    </>
-                )}
-            </d>
-        );
-    })
-} -->
-
-{texts.map((t) => (
-        <p>{t}</p>
-    )
-)}
+{texts.map((t) => {
+  if (t.startsWith("sticker: ")) {
+    const trimmedSticker = t.slice(9);
+    return (
+      <p class="sticker">
+        <Image src={trimmedSticker} alt="image" inferSize={true} draggable="false" />
+      </p>
+    );
+  } else {
+    return <p>{t}</p>;
+  }
+})}
 

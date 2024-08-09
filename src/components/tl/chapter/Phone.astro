@@ -75,6 +75,7 @@ const { to, chat } = Astro.props;
         }
 
         :global(p) {
+            font-size: 0.9rem;
             max-width: calc(350px / 2);
             padding: 10px;
             line-height: 1.1;
@@ -84,6 +85,14 @@ const { to, chat } = Astro.props;
 
             &:not(:last-child) {
                 margin-bottom: 1px;
+            }
+
+            :global(img) {
+                margin: 0 !important;
+            }
+
+            &.sticker {
+                background-color: transparent !important;
             }
         }
 

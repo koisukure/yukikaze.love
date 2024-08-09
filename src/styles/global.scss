@@ -86,9 +86,9 @@ a {
 
     &:hover {
         color: color-mix(
-            in oklab,
-            hsl(var(--text-primary)) 50%,
-            hsl(var(--accent-color))
+            in oklch,
+            hsl(var(--accent-color)) 65%,
+            hsl(var(--background-primary))
         );
     }
 }

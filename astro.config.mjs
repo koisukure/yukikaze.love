@@ -25,6 +25,7 @@ export default defineConfig({
                 "./src/components/tl/chapter/Phone.astro",
                 "./src/components/tl/chapter/Choice.astro",
                 "./src/components/tl/chapter/Rain.astro",
+                "./src/components/tl/chapter/CW.astro",
             ],
         }),
         mdx(),

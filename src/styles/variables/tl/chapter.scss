@@ -19,15 +19,18 @@ html {
     --bubble-line-gap: 0.15rem;
     --bubble-line-color: hsl(var(--blockquote-color));
 
+    --cw-text: #fff;
+    --cw-bg: #{latte.$red};
+
     --box-radio-bg: hsla(#{toHSL(latte.$yellow)}, 0.15);
     --box-paper-bg: #{latte.$surface1};
 
     --phone-case-bg: #{latte.$blue};
     --phone-screen-bg: #{latte.$mantle};
     --phone-header-bg: #{latte.$sky};
-    --phone-header-text: #{latte.$base};
+    --phone-header-text: #fff;
     --phone-sent-bg: #{latte.$sky};
-    --phone-sent-text: #{latte.$base};
+    --phone-sent-text: #fff;
     --phone-received-bg: #{latte.$surface0};
     --phone-received-text: #{latte.$text};
 
@@ -45,6 +48,8 @@ html {
 html.dark {
     --bubble-bg-default: #{mocha.$surface0};
 
+    --cw-bg: hsla(#{toHSL(latte.$red)}, 0.65);
+
     --box-radio-bg: hsla(#{toHSL(mocha.$yellow)}, 0.15);
     --box-paper-bg: #{mocha.$surface1};
 
@@ -53,7 +58,7 @@ html.dark {
     --phone-header-bg: #{mocha.$sky};
     --phone-header-text: #{mocha.$crust};
     --phone-sent-bg: #{mocha.$sky};
-    --phone-sent-text: #{mocha.$base};
+    --phone-sent-text: #{mocha.$crust};
     --phone-received-bg: #{mocha.$surface0};
     --phone-received-text: #{mocha.$text};
 

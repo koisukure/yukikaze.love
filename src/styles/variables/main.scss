@@ -20,11 +20,12 @@ html {
     --header-background: #{toHSL(latte.$crust)};
     --footer-background: #{toHSL(latte.$crust)};
     --blockquote-color: #{toHSL(latte.$surface2)};
+    --filled-color: #{toHSL(#fff)};
 
     --shadow-color: 221, 8%, 56%;
 
     --header-height: 33px;
-    --img-border-radius: 10px;
+    --border-radius: 10px;
     --transition: 0.2s ease;
 }
 
@@ -39,6 +40,8 @@ html.dark {
     --header-background: #{toHSL(mocha.$crust)};
     --footer-background: #{toHSL(mocha.$crust)};
     --blockquote-color: #{toHSL(mocha.$surface2)};
+    --filled-color: #{toHSL(mocha.$crust)};
+
     --img-filter: brightness(80%);
 
     --shadow-color: 240, 34%, 5%;

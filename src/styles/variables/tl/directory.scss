@@ -9,6 +9,10 @@
 html {
     --banner-height: 250px;
 
+    [data-story-theme="red"] {
+        --si-color: #{toHSL(latte.$red)};
+    }
+
     [data-story-theme="mauve"] {
         --si-color: #{toHSL(latte.$mauve)};
     }
@@ -30,13 +34,17 @@ html {
     }
 
     [data-story-theme="lavender"] {
-        --si-color: #{toHSL(latte.$yellow)};
+        --si-color: #{toHSL(latte.$lavender)};
     }
 }
 
 html.dark {
     [data-character] {
         --bubble-bg: hsl(var(--hue), 21%, 23%);
+    }
+
+    [data-story-theme="red"] {
+        --si-color: #{toHSL(mocha.$red)};
     }
 
     [data-story-theme="mauve"] {
@@ -60,7 +68,7 @@ html.dark {
     }
 
     [data-story-theme="lavender"] {
-        --si-color: #{toHSL(mocha.$yellow)};
+        --si-color: #{toHSL(mocha.$lavender)};
     }
 }
 

@@ -65,7 +65,7 @@ main {
         height: 100%;
         width: 100%;
         object-fit: cover;
-        object-position: var(--coverPosition) 50%;
+        object-position: var(--coverPosition, 50%) 50%;
         transition: var(--transition);
         border-radius: 10px 0 0 10px;
     }

@@ -37,6 +37,8 @@
     "devDependencies": {
         "autoprefixer": "^10.4.19",
         "cssnano": "^7.0.4",
+        "postcss": "^8.4.40",
+        "postcss-gap-properties": "^6.0.0",
         "sass": "^1.77.8"
     },
     "postinstall": "npx patch-package && echo \"Patched\""

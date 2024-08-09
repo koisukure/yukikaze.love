@@ -1,12 +1,14 @@
 import styles from "./Bubble.module.scss";
 import type { ReactNode } from "react";
 import { useStoryOptions } from "@/utils/stores";
+
 type CharacterBubbleProps = {
     children: ReactNode;
     character: string;
     name?: string;
     hidden?: boolean;
     unknown?: boolean;
+    expression?: string;
     hologram?: boolean;
     shake?: boolean;
     glow?: boolean;
@@ -14,6 +16,7 @@ type CharacterBubbleProps = {
     flip?: boolean;
     screen?: boolean;
 };
+
 type MCBubbleProps = {
     children: ReactNode;
     mc: true;
@@ -22,6 +25,7 @@ type MCBubbleProps = {
     name?: string;
     avatar?: boolean;
 };
+
 type Props = CharacterBubbleProps | MCBubbleProps;
 
 function BubbleClient({
@@ -34,6 +38,7 @@ function BubbleClient({
 }: Props) {
     const firstname = useStoryOptions("ushio__18TRIP__firstName");
     const gender = useStoryOptions("ushio__18TRIP__gender");
+
     if ("mc" in props) {
         // console.log(gender, "GENDER");
         return (
@@ -68,7 +73,10 @@ function BubbleClient({
             </div>
         );
     }
-    const { character, hologram, shake, glow, flip, screen } = props;
+
+    const { character, expression, hologram, shake, glow, flip, screen } =
+        props;
+
     return (
         <div
             className={`${styles.bubble}${hidden ? ` ${styles.hidden}` : ""}
@@ -81,6 +89,7 @@ function BubbleClient({
                 screen ? ` ${styles.screen}` : ""
             }`}
             data-character={character}
+            data-expression={expression}
         >
             <div className={styles.icon__wrapper}>
                 <div className={styles.icon__box}>
